@@ -35,14 +35,37 @@ def shuffle_sequence(key):
     return ''.join(key)
 
 
-def generate_random_key(key_length, num_of_ints, num_of_letters, num_of_syms):
+def generate_random_key(key_length, num_of_ints=0, num_of_letters=0, num_of_syms=0):
     key = ""
+    msg_suffix = "This lowers the security integrity of the generated key."
+    msg_success = "Key generated without any security issues."
+    msg = ""
     if key_length > 0:
         if num_of_ints and num_of_ints > 0:
             key += generate_random_ints(num_of_ints)
+        else:
+            msg += "WARNING: There are no numbers in the key. " + msg_suffix + "\n"
         if num_of_letters and num_of_letters > 0:
             key += generate_random_letters(num_of_letters)
+        else:
+            msg += "WARNING: There are no letters in the key. " + msg_suffix + "\n"
         if num_of_syms and num_of_syms > 0:
             key += generate_random_symbols(num_of_syms)
-    key = shuffle_sequence(key)
-    return key
+        else:
+            msg += "WARNING: There are no symbols in the key. " + msg_suffix + "\n"
+        key = shuffle_sequence(key)
+        if msg is not "":
+            print(msg)
+            return msg
+        else:
+            print(msg_success)
+            print(key)
+            return key
+    else:
+        return "ERROR: Provide how many characters you want in the key."
+
+generate_random_key(10)
+generate_random_key(10, 3)
+generate_random_key(10, 3, 4)
+generate_random_key(10, 3, 4, 3)
+
