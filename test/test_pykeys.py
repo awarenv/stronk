@@ -56,13 +56,13 @@ class TestPykeys(unittest.TestCase):
 
     def test_shuffle_key_success(self):
         key = "abcdefg"
-        result = pykeys.shuffle_sequence(key)
+        result = pykeys.shuffle_key(key)
         self.assertNotEqual(result, key)
 
     def test_shuffle_key_fail(self):
         key = "abcdefg"
         error = 'ERROR'
-        result = pykeys.shuffle_sequence(key)
+        result = pykeys.shuffle_key(key)
         self.assertEqual(result, error)
 
     def test_generate_random_keys_success(self):

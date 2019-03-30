@@ -31,7 +31,7 @@ def generate_random_key(key_length, num_of_ints=0, num_of_letters=0, num_of_syms
         return "ERROR: Provide how many characters you want in the key."
 
 
-def shuffle_sequence(key):
+def shuffle_key(key):
     key = list(key)
     random.SystemRandom().shuffle(key)
     return ''.join(key)
