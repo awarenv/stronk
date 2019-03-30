@@ -4,7 +4,7 @@ Python key and password generator tool.
 
 ## Requirements
 
-Python 3+.
+Python 3.6+.
 
 ## Usage
 
