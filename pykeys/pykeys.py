@@ -6,17 +6,19 @@ def generate_random_key(key_length, num_of_ints=0, num_of_letters=0, num_of_syms
     msg_suffix = "This lowers the security integrity of the generated key."
     msg_success = "Key generated without any security issues."
     msg = ""
+    character_type = 0
     if key_length > 0:
+        key = generate_random_chars(key_length, character_type)
         if num_of_ints and num_of_ints > 0:
-            key += _generate_random_chars(num_of_ints, 'ints')
+            key += _generate_random_chars(num_of_ints, character_type)
         else:
             msg += "WARNING: There are no numbers in the key. " + msg_suffix + "\n"
         if num_of_letters and num_of_letters > 0:
-            key += _generate_random_chars(num_of_letters, 'letters')
+            key += _generate_random_chars(num_of_letters, character_type)
         else:
             msg += "WARNING: There are no letters in the key. " + msg_suffix + "\n"
         if num_of_syms and num_of_syms > 0:
-            key += _generate_random_chars(num_of_syms, 'symbols')
+            key += _generate_random_chars(num_of_syms, character_type)
         else:
             msg += "WARNING: There are no symbols in the key. " + msg_suffix + "\n"
         key = shuffle_sequence(key)
@@ -42,14 +44,14 @@ def _generate_random_chars(number_of_chars, character_type):
     result = ''
     if number_of_chars > 0:
         character_dict = {
-            'ints': _generate_random_ints,
-            'letters': _generate_random_letters,
-            'symbols': _generate_random_symbols
+            0: _generate_random_ints,
+            1: _generate_random_letters,
+            2: _generate_random_symbols
         }
         if character_type:
             result = character_dict[character_type](number_of_chars)
         else:
-            result = character_dict['letters'](number_of_chars)
+            result = character_dict[1](number_of_chars)
     else:
         return error_message
     return result
