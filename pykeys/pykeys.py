@@ -1,27 +1,39 @@
 import secrets as random
 
 
+response = {}
+
 def generate_random_key(key_length, num_of_ints=0, num_of_letters=0, num_of_syms=0):
     key = ""
     msg_suffix = "This lowers the security integrity of the generated key."
     msg_success = "Key generated without any security issues."
     msg = ""
-    character_type = 0
+    response['message'] = "No keys were generated."
+    response['keys'] = []
     if key_length > 0:
-        key = generate_random_chars(key_length, character_type)
+        key = ''
+        key_dict = {
+            'ints': _generate_random_chars,
+            'letters': _generate_random_chars,
+            'symbols': _generate_random_chars
+        }
         if num_of_ints and num_of_ints > 0:
-            key += _generate_random_chars(num_of_ints, character_type)
+            key += key_dict['ints'](num_of_ints, 0)
         else:
             msg += "WARNING: There are no numbers in the key. " + msg_suffix + "\n"
         if num_of_letters and num_of_letters > 0:
-            key += _generate_random_chars(num_of_letters, character_type)
+            key += key_dict['letters'](num_of_letters, 1)
         else:
             msg += "WARNING: There are no letters in the key. " + msg_suffix + "\n"
         if num_of_syms and num_of_syms > 0:
-            key += _generate_random_chars(num_of_syms, character_type)
+            key += key_dict['symbols'](num_of_syms, 2)
         else:
             msg += "WARNING: There are no symbols in the key. " + msg_suffix + "\n"
-        key = shuffle_sequence(key)
+        if (num_of_ints and num_of_letters and num_of_letters) == 0:
+            key = _generate_random_chars(key_length, 1)
+        else:
+            key = ''
+        key = shuffle_key(key)
         if msg is not "":
             print(msg)
             return msg
@@ -83,8 +95,6 @@ def _generate_random_symbols(number_of_symbols):
         symbol_subkey += symbols[random_substring:random_substring+1]
         x += 1
     return symbol_subkey
-
-
 
 
 generate_random_key(10)

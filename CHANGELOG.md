@@ -1,5 +1,10 @@
 # Pykeys Changelog
 
+## 0.1.2
+
+- Add response object
+- Modify generation logic
+
 ## 0.1.1
 
 - Label as WIP since code isn't in a functional state
