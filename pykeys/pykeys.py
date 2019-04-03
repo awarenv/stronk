@@ -41,14 +41,8 @@ def generate_random_keys(number_of_keys=1, key_length=16, num_of_ints=0, num_of_
             key = shuffle_key(key)
             response['keys'][k] = key
             response['messages']['statuses']['keys'] = msg
-            if msg is not '':
-                print(msg)
-            else:
-                response['messages']['statuses']['keys'] = msg_success
-                print(response['messages']['statuses']['keys'])
         else:
             response['messages']['error'] =  'ERROR: Provide how many characters you want in the key.'
-        print(response['keys'])
         k += 1
     return response
 
@@ -103,11 +97,3 @@ def _generate_random_symbols(number_of_symbols):
         symbol_subkey += symbols[random_substring:random_substring+1]
         x += 1
     return symbol_subkey
-
-
-generate_random_keys(3)
-# generate_random_keys(3, 10)
-# generate_random_keys(3, 10, 3)
-# generate_random_keys(3, 10, 3, 4)
-# generate_random_keys(3, 10, 3, 4, 3)
-
