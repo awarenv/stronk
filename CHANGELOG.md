@@ -1,5 +1,9 @@
 # Pykeys Changelog
 
+## 0.1.4
+
+- Pylint cleanup
+
 ## 0.1.3
 
 - Change double quotes to single quotes for consistency purposes
