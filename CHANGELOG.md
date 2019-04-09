@@ -2,7 +2,7 @@
 
 ## 0.1.4
 
-- Pylint cleanup
+Pylint cleanup
 
 ## 0.1.3
 
