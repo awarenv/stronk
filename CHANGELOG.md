@@ -1,5 +1,9 @@
 # Pykeys Changelog
 
+## 0.2.0
+
+Major refactor, made it much simpler, no message reporting.
+
 ## 0.1.4
 
 Pylint cleanup
