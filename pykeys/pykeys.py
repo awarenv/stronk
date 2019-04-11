@@ -58,6 +58,12 @@ def _generate_random_char():
         return random.choice(symbols)
 
 
+def _prettify_output(keys):
+    for key in keys:
+        print(key)
+
+
 if __name__ == "__main__":
     import sys
-    generate_random_keys(int(sys.argv[1]), int(sys.argv[2]))
+    _prettify_output(generate_random_keys(int(sys.argv[1]), int(sys.argv[2])))
+

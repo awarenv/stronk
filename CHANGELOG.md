@@ -1,5 +1,9 @@
 # Pykeys Changelog
 
+## 0.3.1
+
+Add printing of keys to stdout
+
 ## 0.3.0
 
 - Add error reporting
