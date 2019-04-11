@@ -1,11 +1,11 @@
 from setuptools import setup
 
-setup(name='pykeys',
-      version='0.1.3',
+setup(name='stronk',
+      version='1.0.0',
       description='Key generator',
-      url='https://github.com/brianrthompson/pykeys',
+      url='https://github.com/brianrthompson/stronk',
       author='Brian Thompson',
       author_email='brianrt23@gmail.com',
       license='MIT',
-      packages=['pykeys'],
+      packages=['stronk'],
       zip_safe=False)

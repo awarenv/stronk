@@ -1,6 +1,6 @@
 # Contributing Guide
 
-Guide for contributing to Pykeys.
+Guide for contributing to Stronk.
 
 ## Forking
 

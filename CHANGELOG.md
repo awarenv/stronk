@@ -1,4 +1,4 @@
-# Pykeys Changelog
+# Stronk Changelog
 
 ## 0.5.0
 

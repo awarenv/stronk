@@ -1,5 +1,5 @@
 """
-Pykeys module
+Stronk module
 """
 
 import secrets as random
@@ -11,7 +11,7 @@ letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
 symbols = '!@#$%+=?&*()'
 
 
-def generate_random_keys(number_of_keys=0, key_length=0):
+def generate_random_keys(number_of_keys=1, key_length=16):
     """ Returns the generated keys """
     number_of_keys_iterator = 0
     keys = []
@@ -69,10 +69,7 @@ def _prettify_output(output):
 
 def _print_to_txt_file(keys):
     current_working_directory = os.getcwd()
-    output_file = open(current_working_directory + "/pykeys.txt", "w")
+    output_file = open(current_working_directory + "/stronk.txt", "w")
     for key in keys:
         output_file.write(key + "\n")
     output_file.close()
-
-
-
