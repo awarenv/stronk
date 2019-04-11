@@ -1,8 +1,14 @@
 # Pykeys Changelog
 
+## 0.5.0
+
+- Add __main__.py
+- Modify prettify logic to print proper error messages
+- Update README
+
 ## 0.4.0
 
-- Update 
+Update error reporting
 
 ## 0.3.1
 

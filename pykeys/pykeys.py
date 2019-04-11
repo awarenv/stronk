@@ -11,7 +11,7 @@ letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
 symbols = '!@#$%+=?&*()'
 
 
-def generate_random_keys(number_of_keys=1, key_length=16):
+def generate_random_keys(number_of_keys=0, key_length=0):
     """ Returns the generated keys """
     number_of_keys_iterator = 0
     keys = []
@@ -59,9 +59,12 @@ def _generate_random_char():
         return random.choice(symbols)
 
 
-def _prettify_output(keys):
-    for key in keys:
-        print(key)
+def _prettify_output(output):
+    if isinstance(output, list):
+        for out in output:
+            print(out)
+    else:
+        print(output)
 
 
 def _print_to_txt_file(keys):
@@ -72,8 +75,4 @@ def _print_to_txt_file(keys):
     output_file.close()
 
 
-if __name__ == "__main__":
-    import sys
-    keys = generate_random_keys(int(sys.argv[1]), int(sys.argv[2]))
-    _prettify_output(keys)
-    _print_to_txt_file(keys)
+
