@@ -49,10 +49,10 @@ def _shuffle_key(key):
 
 def _generate_random_char():
     """ Generate a random integer, letter, or symbol """
-    character_type = random.randbelow(3)
-    if character_type == 0:
+    character_type = random.randbelow(11)
+    if character_type == (0 or 1):
         return random.randbelow(10)
-    if character_type == 1:
+    if character_type != (0 or 1 or 2):
         return random.choice(letters)
     if character_type == 2:
         return random.choice(symbols)
