@@ -3,6 +3,7 @@ Pykeys module
 """
 
 import secrets as random
+import os
 
 
 key = ''
@@ -63,7 +64,16 @@ def _prettify_output(keys):
         print(key)
 
 
+def _print_to_txt_file(keys):
+    current_working_directory = os.getcwd()
+    output_file = open(current_working_directory + "/pykeys.txt", "w")
+    for key in keys:
+        output_file.write(key + "\n")
+    output_file.close()
+
+
 if __name__ == "__main__":
     import sys
-    _prettify_output(generate_random_keys(int(sys.argv[1]), int(sys.argv[2])))
-
+    keys = generate_random_keys(int(sys.argv[1]), int(sys.argv[2]))
+    _prettify_output(keys)
+    _print_to_txt_file(keys)
