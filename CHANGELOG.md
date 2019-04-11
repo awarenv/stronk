@@ -1,5 +1,14 @@
 # Pykeys Changelog
 
+## 0.3.1
+
+Add printing of keys to stdout
+
+## 0.3.0
+
+- Add error reporting
+- Add unit test coverage
+
 ## 0.2.0
 
 Major refactor, made it much simpler, no message reporting.
