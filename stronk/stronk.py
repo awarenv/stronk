@@ -33,7 +33,10 @@ def generate_random_keys(number_of_keys=1, key_length=16):
                 key_length_iterator += 1
             keys.append(_shuffle_key(key))
             number_of_keys_iterator += 1
+        _prettify_output(keys)
+        _print_to_txt_file(keys)
         return keys
+    _prettify_output(error_message)
     return error_message
 
 

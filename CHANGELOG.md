@@ -1,5 +1,9 @@
 # Stronk Changelog
 
+## 1.0.2
+
+Move some logic from __main__.py to stronk.py to fix #3
+
 ## 1.0.1
 
 Hotfix to remove dependencies from `setup.py`
