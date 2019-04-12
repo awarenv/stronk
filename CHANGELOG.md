@@ -1,5 +1,9 @@
 # Stronk Changelog
 
+## 1.0.1
+
+Hotfix to remove dependencies from `setup.py`
+
 ## 1.0.0
 
 Initial release
