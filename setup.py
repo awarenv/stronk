@@ -11,7 +11,7 @@ setup(
     name='stronk',
     version='1.0.0',
     description='Strong key generator',
-    long_descripton=README,
+    long_description=README,
     long_description_content_type="text/markdown",
     url='https://github.com/brianrthompson/stronk',
     author='Brian Thompson',
@@ -24,7 +24,6 @@ setup(
     ],
     packages=find_packages(exclude=("test",)),
     include_package_data=True,
-    install_requires=["secrets", "os"],
     entry_points={
         "console_scripts": [
             "stronk=stronk.__main__:main",
