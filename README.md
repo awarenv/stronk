@@ -13,19 +13,19 @@ Python 3.6+.
 To generate three keys with 256 characters:
 
 ```
-python3 -m stronk 3 256
+stronk 3 256
 ```
 
 To generate the default single key with 16 characters:
 
 ```
-python3 -m stronk
+stronk
 ```
 
 The maximum number of keys and characters that can be generated is 100 and 256:
 
 ```
-python3 -m stronk 100 256
+stronk 100 256
 ```
 
 ### Errors
@@ -39,4 +39,4 @@ current working directory.
 
 ## Contributing
 
-See [the contributing guide](contributing.md).
+See [the contributing guide](CONTRIBUTING.md).

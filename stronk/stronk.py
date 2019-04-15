@@ -6,9 +6,8 @@ import secrets as random
 import os
 
 
-key = ''
-letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
-symbols = '!@#$%+=?&*()'
+LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
+SYMBOLS = '!@#$%+=?&*()'
 
 
 def generate_random_keys(number_of_keys=1, key_length=16):
@@ -53,13 +52,12 @@ def _shuffle_key(key):
 
 def _generate_random_char():
     """ Generate a random integer, letter, or symbol """
-    character_type = random.randbelow(11)
-    if character_type == (0 or 1):
+    character_type = random.randbelow(13)
+    if character_type == (0 or 1 or 2):
         return random.randbelow(10)
-    if character_type != (0 or 1 or 2):
-        return random.choice(letters)
-    if character_type == 2:
-        return random.choice(symbols)
+    if character_type == (3 or 4):
+        return random.choice(SYMBOLS)
+    return random.choice(LETTERS)
 
 
 def _prettify_output(output):
