@@ -1,5 +1,11 @@
 # Stronk Changelog
 
+## 1.0.3
+
+- Update README
+- Fix pylint errors
+- Change key generation logic to produce more symbols
+
 ## 1.0.2
 
 Move some logic from __main__.py to stronk.py to fix #3
