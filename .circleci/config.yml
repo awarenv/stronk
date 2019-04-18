@@ -19,7 +19,7 @@ jobs:
       - checkout
       - run: sudo pip install twine
       - run: python setup.py sdist bdist_wheel
-      - run: twine upload dist/*
+      - run: twine -u brianrthompson -p er)DSDSL-490 upload dist/*
 workflows:
   version: 2
   build_and_test:
