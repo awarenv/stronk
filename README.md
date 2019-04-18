@@ -2,7 +2,7 @@
 
 [![CircleCI](https://circleci.com/gh/brianrthompson/Stronk/tree/master.svg?style=svg)](https://circleci.com/gh/brianrthompson/Stronk/tree/master)
 [![PyPi package](https://img.shields.io/badge/version-1.1.1-green.svg)](https://semver.org)
-[![Python version]](https://img.shields.io/badge/version-3.6-yellow.svg)
+[![Python version](https://img.shields.io/badge/version-3.6-yellow.svg)](https://semver.org)
 
 
 Strong Python key and password generator tool.
