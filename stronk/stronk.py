@@ -10,7 +10,7 @@ LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
 SYMBOLS = '!@#$%+=?&*()'
 
 
-def generate_random_keys(number_of_keys=1, key_length=16):
+def generate_random_keys(number_of_keys=1, key_length=16, identify=False):
     """ Returns the generated keys """
     number_of_keys_iterator = 0
     keys = []
@@ -32,10 +32,10 @@ def generate_random_keys(number_of_keys=1, key_length=16):
                 key_length_iterator += 1
             keys.append(_shuffle_key(key))
             number_of_keys_iterator += 1
-        _prettify_output(keys)
-        _print_to_txt_file(keys)
+        _prettify_output(keys, identify)
+        _print_to_txt_file(keys, identify)
         return keys
-    _prettify_output(error_message)
+    _prettify_output(error_message, False)
     return error_message
 
 
@@ -60,17 +60,24 @@ def _generate_random_char():
     return random.choice(LETTERS)
 
 
-def _prettify_output(output):
+def _prettify_output(output, identify):
     if isinstance(output, list):
-        for out in output:
-            print(out)
+        for iterator, out in enumerate(output):
+            if identify:
+                print("(" + str(iterator + 1) + ") " + out)
+            else:
+                print(out)
     else:
         print(output)
 
 
-def _print_to_txt_file(keys):
+def _print_to_txt_file(keys, identify):
     current_working_directory = os.getcwd()
     output_file = open(current_working_directory + "/stronk.txt", "w")
-    for key in keys:
-        output_file.write(key + "\n")
+    for iterator, key in enumerate(keys):
+        if identify:
+            output_file.write("(" + str(iterator + 1) + ") " + key + "\n")
+        else:
+            output_file.write(key + "\n")
+
     output_file.close()

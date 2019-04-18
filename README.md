@@ -28,6 +28,13 @@ The maximum number of keys and characters that can be generated is 100 and 256:
 stronk 100 256
 ```
 
+Add the flag -i to generate identifiers alongside the keys for easier readibility, which also gets printed to the
+file.  This is disabled by default.
+
+```
+stronk -i 3 256
+```
+
 ### Errors
 
 Passing string literals as arguments will throw an error.
