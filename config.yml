@@ -1,0 +1,28 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/python:3.6
+    steps:
+      - checkout
+      - run: python -m py_compile stronk/stronk.py
+  test:
+    docker:
+      - image: circleci/python:3.6
+    steps:
+      - checkout
+      - run: python -m unittest test/test_stronk.py
+  deploy:
+    docker:
+      - image: circleci/python:3.6
+    steps:
+      - checkout
+      - run: pip install twine
+      - run: python setup.py sdist bdist_wheel
+      - run: twine upload dist/*
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
+      - test
