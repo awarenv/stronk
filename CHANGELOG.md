@@ -17,6 +17,10 @@ Move some logic from __main__.py to stronk.py to fix #3.
 
 Hotfix to remove dependencies from `setup.py`.
 
+## 1.1.2
+
+Update SVG images in README.
+
 ## 1.1.1
 
 Add CircleCI integration.
