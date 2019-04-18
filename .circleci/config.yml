@@ -19,7 +19,7 @@ jobs:
       - checkout
       - run: sudo pip install twine
       - run: python setup.py sdist bdist_wheel
-      - run: python3 -m keyring set https://upload.pypi.org/legacy/ your-username && echo wUC8gQh4yKVFQff
+      - run: python -m keyring set https://upload.pypi.org/legacy/ your-username && echo wUC8gQh4yKVFQff
       - run: twine upload dist/*
 workflows:
   version: 2
