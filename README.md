@@ -1,6 +1,5 @@
 # Stronk
-
-[![CircleCI](https://circleci.com/gh/brianrthompson/Stronk/tree/master.svg?style=svg)](https://circleci.com/gh/brianrthompson/Stronk/tree/master)
+[![CircleCI](https://circleci.com/gh/hash-vault/stronk.svg?style=svg)](https://circleci.com/gh/hash-vault/stronk)
 [![stronk](https://img.shields.io/pypi/v/stronk.svg)](https://pypi.org/project/stronk/)
 
 Strong Python key and password generator tool.
