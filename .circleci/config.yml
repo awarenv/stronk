@@ -33,7 +33,7 @@ jobs:
       - image: circleci/python:3.6
     steps:
       - when:
-        condition: <<parameters.deploy_to_prod>>
+        condition: $DEPLOYED_VERSION != $THIS_VERSION
         steps:
           - checkout
           - run: sudo pip install twine
@@ -45,5 +45,4 @@ workflows:
     jobs:
       - build
       - test
-      - deploy:
-          deploy_to_prod: $DEPLOYED_VERSION != $THIS_VERSION
+      - deploy
