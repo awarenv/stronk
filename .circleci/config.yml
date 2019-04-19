@@ -40,5 +40,5 @@ workflows:
     jobs:
       - deploy:
           deploy_to_prod: 
-            - run: `if [ $DEPLOYED_VERSION != $THIS_VERSION ] return true fi`
+            - run: if [ $DEPLOYED_VERSION != $THIS_VERSION ] return true fi
       - deploy
