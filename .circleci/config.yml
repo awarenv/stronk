@@ -24,7 +24,7 @@ jobs:
   deploy:
     parameters:
       deploy_to_prod:
-        type: string
+        type: mapping
         default: $THIS_VERSION
     branches:
       only:
