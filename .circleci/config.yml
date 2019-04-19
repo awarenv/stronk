@@ -6,9 +6,6 @@ jobs:
     steps:
       - checkout
       - run: python -m py_compile stronk/stronk.py
-      - run: THIS_VERSION=`python -m stronk -V`
-      - run: sudo pip install stronk
-      - run: DEPLOYED_VERSION=`python stronk -V`
   test:
     docker:
       - image: circleci/python:3.6
@@ -16,15 +13,10 @@ jobs:
       - checkout
       - run: python -m unittest test/test_stronk.py
   deploy:
-    parameters:
-      deploy_to_prod:
-        type: string
-        default: $THIS_VERSION
     docker:
       - image: circleci/python:3.6
     steps:
       - when:
-          condition: <<parameters.deploy_to_prod>>
           steps:
             - checkout
             - run: sudo pip install twine
@@ -38,7 +30,4 @@ workflows:
       - test
   deploy:
     jobs:
-      - deploy:
-          deploy_to_prod: 
-            - run: $DEPLOYED_VERSION
       - deploy
