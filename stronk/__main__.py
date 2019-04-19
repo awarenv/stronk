@@ -2,8 +2,7 @@
 import sys
 import argparse
 
-from stronk import stronk
-
+from stronk import stronk, __version__
 
 def getArguments():
     """ Parses CLI arguments """
@@ -14,6 +13,7 @@ def getArguments():
                         help='number of keys to generate')
     parser.add_argument('--identify', '-i', action='store_true', required=False,
                         help='print the keys with a number beside them')
+    parser.add_argument('--version', '-V', action='version', version='{version}'.format(version=__version__))
     return parser
 
 

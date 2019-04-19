@@ -9,7 +9,7 @@ README = (HERE / "README.md").read_text()
 
 setup(
     name='stronk',
-    version='1.1.2',
+    version='1.1.3',
     description='Strong key generator',
     long_description=README,
     long_description_content_type="text/markdown",

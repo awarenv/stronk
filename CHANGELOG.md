@@ -1,6 +1,19 @@
 # Stronk Changelog
 
+## 1.1.3
+
+Add --version flag.
+
+## 1.1.2
+
+Update SVG images in README.
+
+## 1.1.1
+
+Add CircleCI integration.
+
 ## 1.1.0
+
 Add flag for printing numbers beside keys for readability.
 
 ## 1.0.3
@@ -16,14 +29,6 @@ Move some logic from __main__.py to stronk.py to fix #3.
 ## 1.0.1
 
 Hotfix to remove dependencies from `setup.py`.
-
-## 1.1.2
-
-Update SVG images in README.
-
-## 1.1.1
-
-Add CircleCI integration.
 
 ## 1.0.0
 
