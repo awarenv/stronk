@@ -18,8 +18,8 @@ jobs:
   deploy:
     parameters:
       deploy_to_prod:
-        type: boolean
-        default: false
+        type: string
+        default: $THIS_VERSION
     docker:
       - image: circleci/python:3.6
     steps:
@@ -40,5 +40,5 @@ workflows:
     jobs:
       - deploy:
           deploy_to_prod: 
-            - run: if [ $DEPLOYED_VERSION != $THIS_VERSION ] return true fi
+            - run: $DEPLOYED_VERSION
       - deploy
