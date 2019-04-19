@@ -26,7 +26,6 @@ jobs:
       deploy_to_prod:
         type: string
         default: $THIS_VERSION
-    machine: true
     branches:
       only:
         - master
