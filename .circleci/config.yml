@@ -6,9 +6,9 @@ jobs:
     steps:
       - checkout
       - run: python -m py_compile stronk/stronk.py
-      - run: python -m stronk -V > $THIS_VERSION
+      - run: THIS_VERSION=`python -m stronk -V`
       - run: sudo pip install stronk
-      - run: python stronk -V > $DEPLOYED_VERSION
+      - run: DEPLOYED_VERSION=`python stronk -V`
   test:
     docker:
       - image: circleci/python:3.6
@@ -32,8 +32,10 @@ jobs:
             - run: twine upload dist/* -u $PYPI_USERNAME -p $PYPI_PASSWORD 
 workflows:
   version: 2.1
-  build_and_test_and_deploy:
+  build_and_test:
     jobs:
       - build
       - test
+  deploy:
+    jobs:
       - deploy
