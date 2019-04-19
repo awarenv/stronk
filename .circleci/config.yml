@@ -38,5 +38,6 @@ workflows:
       - test
   deploy:
     jobs:
-      - deploy
+      - deploy:
           deploy_to_prod: "$DEPLOYED_VERSION"
+      - deploy
