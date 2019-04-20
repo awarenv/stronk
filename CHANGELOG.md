@@ -1,5 +1,9 @@
 # Stronk Changelog
 
+## 1.1.4
+
+Add constants.py.
+
 ## 1.1.3
 
 Add --version flag.
