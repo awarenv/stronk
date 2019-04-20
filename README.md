@@ -1,4 +1,6 @@
 # Stronk
+[![CircleCI](https://circleci.com/gh/hash-vault/stronk.svg?style=svg)](https://circleci.com/gh/hash-vault/stronk)
+[![stronk](https://img.shields.io/pypi/v/stronk.svg)](https://pypi.org/project/stronk/)
 
 Strong Python key and password generator tool.
 
@@ -26,6 +28,13 @@ The maximum number of keys and characters that can be generated is 100 and 256:
 
 ```
 stronk 100 256
+```
+
+Add the flag -i to generate identifiers alongside the keys for easier readibility, which also gets printed to the
+file.  This is disabled by default.
+
+```
+stronk -i 3 256
 ```
 
 ### Errors

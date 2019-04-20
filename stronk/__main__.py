@@ -1,16 +1,31 @@
 # __main__.py
 import sys
+import argparse
 
-from stronk import stronk
+from stronk import stronk, __version__
+
+def getArguments():
+    """ Parses CLI arguments """
+    parser = argparse.ArgumentParser(description='Generate strong keys.')
+    parser.add_argument('keyAmount', metavar='K', type=int, nargs='?', const='1', default='1',
+                        help='number of keys to generate')
+    parser.add_argument('keyLength', metavar='L', type=int, nargs='?', const='16', default='16',
+                        help='number of keys to generate')
+    parser.add_argument('--identify', '-i', action='store_true', required=False,
+                        help='print the keys with a number beside them')
+    parser.add_argument('--version', '-V', action='version', version='{version}'.format(version=__version__))
+    return parser
 
 
 def main():
     """ Spit out a string regardless of input """
+    args = getArguments().parse_args()
     if len(sys.argv) == 2:
-        stronk.generate_random_keys(int(sys.argv[1]), 16)
+        stronk.generate_random_keys(
+            args.keyAmount, args.keyLength)
     elif len(sys.argv) >= 3:
         stronk.generate_random_keys(
-            int(sys.argv[1]), int(sys.argv[2]))
+            args.keyAmount, args.keyLength, args.identify)
     else:
         stronk.generate_random_keys()
 
